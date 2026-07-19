@@ -70,7 +70,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 # Add your Vercel URL here later
 CSRF_TRUSTED_ORIGINS = [
-    "https://booknova-tzld.vercel.app/",
+    "https://booknova-tzld.vercel.app",
 ]
 
 
