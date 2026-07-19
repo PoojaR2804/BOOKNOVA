@@ -1,0 +1,162 @@
+.books-section{
+    padding:80px;
+    background:#f7fcf6;
+}
+
+.section-tag{
+    color:#5d8d47;
+    font-weight:600;
+    letter-spacing:2px;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.books-section h2{
+    text-align:center;
+    font-size:42px;
+    color:#2f3e2c;
+    margin-bottom:50px;
+}
+
+.book{
+    background:#fff;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+
+    height:520px;              /* same height for every card */
+    display:flex;
+    flex-direction:column;
+}
+
+.book:hover{
+    transform:translateY(-8px);
+}
+
+.book-img{
+    width:180px;
+    height:250px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.book-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.book h3{
+    color:#2f3e2c;
+    margin-bottom:8px;
+    min-height:72px;          /* keeps all titles same height */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.book p{
+    color:#777;
+    margin-bottom:12px;
+}
+
+.book span{
+    display:block;
+    font-weight:bold;
+    color:#5d8d47;
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+/* ---------- Popular Books Buttons ---------- */
+
+.book-card-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:18px;
+}
+
+.book-card-buttons button,
+.book-card-buttons .read-link{
+    width:100px;
+    height:60px;
+    background:#5F8D4E;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    text-decoration:none;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    line-height:1.2;
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:.3s;
+    box-sizing:border-box;
+}
+
+.book-card-buttons button:hover,
+.book-card-buttons .read-link:hover{
+    background:#4B743D;
+}
+
+
+/* ---------- Swiper Arrow ---------- */
+
+:root{
+    --swiper-navigation-color:#3f8120;
+}
+
+/* ---------- New Arrivals Buttons ---------- */
+
+.new-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    margin-top:18px;
+}
+
+.new-buttons a{
+    text-decoration:none;
+}
+
+.new-buttons button{
+    width:95px;
+    height:60px;
+    background:#5F8D4E;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    line-height:1.2;
+    transition:.3s;
+}
+
+.new-buttons button:hover{
+    background:#4B743D;
+    transform:translateY(-2px);
+}
+.read-link {
+    border: none;
+    background: #5F8D4E;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}

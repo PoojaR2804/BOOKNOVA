@@ -1,0 +1,41 @@
+.categories{
+    padding:70px 80px;
+    background:#F4FAF4;
+    text-align:center;
+}
+
+.category-tag{
+    color:#5F8D4E;
+    font-weight:600;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.categories h2{
+    font-size:40px;
+    color:#2E3A2F;
+    margin-bottom:40px;
+}
+
+.category-list{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+}
+
+.category-list button{
+    border:none;
+    background:white;
+    padding:15px 28px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+    transition:.3s;
+}
+
+.category-list button:hover{
+    background:#5F8D4E;
+    color:white;
+}
