@@ -1,0 +1,224 @@
+.orders-container{
+    max-width:1100px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.orders-container h1{
+    font-size:40px;
+    color:#2F3E2F;
+    text-align:center;
+    margin-bottom:35px;
+    font-weight:700;
+}
+
+/* Order Card */
+
+.order-card{
+    width:100%;
+    margin-bottom:30px;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    overflow:hidden;
+    transition:.3s;
+}
+
+.order-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(0,0,0,.12);
+}
+
+/* Header */
+
+.order-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 30px;
+    background:#f7faf5;
+    border-bottom:1px solid #e6ece2;
+}
+
+.label{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#777;
+    margin-bottom:5px;
+}
+
+.order-top h3,
+.order-top h4{
+    margin:0;
+    font-size:24px;
+    color:#2F3E2F;
+}
+
+.paid-badge{
+    background:#2E7D32;
+    color:#fff;
+    padding:10px 22px;
+    border-radius:30px;
+    font-size:15px;
+    font-weight:600;
+}
+
+/* Book Section */
+
+.books-section{
+    padding:25px;
+}
+
+.book-card{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    width:100%;
+    background:#fafafa;
+    border:1px solid #ececec;
+    border-radius:15px;
+    padding:25px;
+    box-sizing:border-box;
+}
+
+.book-image{
+    width:140px;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    box-shadow:0 5px 12px rgba(0,0,0,.12);
+}
+
+.book-details{
+    flex:1;
+}
+
+.book-details h2{
+    margin:0 0 15px;
+    font-size:34px;
+    color:#2F3E2F;
+}
+
+.book-details p{
+    margin:8px 0;
+    font-size:17px;
+    color:#555;
+    line-height:1.6;
+}
+
+.book-details strong{
+    color:#333;
+}
+
+.book-details h3{
+    margin-top:18px;
+    font-size:34px;
+    color:#2E7D32;
+    font-weight:700;
+}
+
+/* Footer */
+
+.order-footer{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    padding:20px 30px;
+    background:#f7faf5;
+    border-top:1px solid #e6ece2;
+}
+
+.order-footer h2{
+    margin:0;
+    font-size:30px;
+    color:#2E7D32;
+}
+
+/* Empty Orders */
+
+.empty-orders{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.empty-orders img{
+    width:220px;
+    margin-bottom:25px;
+}
+
+.empty-orders h2{
+    color:#2F3E2F;
+    margin-bottom:10px;
+}
+
+.empty-orders p{
+    color:#666;
+    font-size:18px;
+}
+
+.shop-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 30px;
+    background:#5F8D4E;
+    color:#fff;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:600;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.shop-btn:hover{
+    background:#4B743D;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.orders-container{
+    padding:15px;
+}
+
+.orders-container h1{
+    font-size:32px;
+}
+
+.order-top{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.book-card{
+    flex-direction:column;
+    text-align:center;
+}
+
+.book-image{
+    width:180px;
+    height:260px;
+}
+
+.book-details{
+    width:100%;
+}
+
+.book-details h2{
+    font-size:28px;
+}
+
+.book-details h3{
+    font-size:28px;
+}
+
+.order-footer{
+    justify-content:center;
+}
+
+.order-footer h2{
+    font-size:24px;
+}
+}

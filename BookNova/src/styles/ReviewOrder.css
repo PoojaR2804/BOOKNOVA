@@ -1,0 +1,163 @@
+.review-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.review-container h1 {
+  text-align: center;
+  color: #2d4a2d;
+  margin-bottom: 30px;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.review-card h2 {
+  color: #4a7c3c;
+  margin-bottom: 15px;
+}
+
+.review-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+.review-item img {
+  width: 90px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.review-item h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.review-item p {
+  margin: 6px 0;
+  color: #555;
+  font-size: 16px;
+}
+
+.review-card hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 25px 0;
+}
+
+.review-card p {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.review-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.review-buttons button {
+  width: 220px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #5fb139;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.review-buttons button:hover {
+  background: #4b922d;
+  transform: translateY(-2px);
+}
+
+.review-buttons button:first-child {
+  background: #6c757d;
+}
+
+.review-buttons button:first-child:hover {
+  background: #5a6268;
+}
+
+@media (max-width: 768px) {
+  .review-card {
+    padding: 20px;
+  }
+
+  .review-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .review-item img {
+    width: 120px;
+    height: 160px;
+  }
+
+  .review-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .review-buttons button {
+    width: 100%;
+  }
+}
+.delivery-box {
+  margin: 25px 0;
+  padding: 20px;
+  border: 1px solid #d8e6d1;
+  border-radius: 12px;
+  background: #f8fcf7;
+}
+
+.delivery-box h2 {
+  margin-bottom: 18px;
+  color: #2d4a2d;
+}
+
+.delivery-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 25px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.label {
+  font-weight: 600;
+  color: #4a7c3c;
+  min-width: 90px;
+}
+
+.value {
+  flex: 1;
+  color: #444;
+  text-align: right;
+  word-break: break-word;
+}

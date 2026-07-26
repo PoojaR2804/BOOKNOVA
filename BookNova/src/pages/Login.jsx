@@ -1,7 +1,7 @@
 import "../styles/Login.css";
 import { useState, useEffect } from "react";
 import api from "../services/api";
-import { useNavigate, Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Login() {
   const [form, setForm] = useState({
@@ -12,14 +12,14 @@ function Login() {
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
 
-  const navigate = useNavigate();
   const location = useLocation();
-      useEffect(() => {
-  if (location.state?.message) {
-    setMessage(location.state.message);
-    setIsError(false);
-  }
-}, [location.state]);
+
+  useEffect(() => {
+    if (location.state?.message) {
+      setMessage(location.state.message);
+      setIsError(false);
+    }
+  }, [location.state]);
 
   const handleChange = (e) => {
     setForm({
@@ -42,7 +42,7 @@ function Login() {
       setIsError(false);
 
       setTimeout(() => {
-        navigate("/");
+        window.location.href = "/";
       }, 1500);
 
     } catch (err) {
@@ -65,6 +65,7 @@ function Login() {
         )}
 
         <form onSubmit={handleSubmit}>
+
           <input
             type="text"
             name="username"
@@ -86,6 +87,7 @@ function Login() {
           <button type="submit">
             Login
           </button>
+
         </form>
 
         <p>

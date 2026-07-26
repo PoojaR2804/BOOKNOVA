@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import BookCard from "./components/BookCard";
@@ -11,8 +12,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import Payment from "./pages/Payment";
+import Orders from "./pages/Orders";
+import ReviewOrder from "./pages/ReviewOrder";
 import "./styles/App.css";
 
 function Home() {
@@ -45,6 +47,9 @@ function App() {
  element={<Cart />} 
 />
 <Route path="/checkout" element={<Checkout />} />
+<Route path="/payment" element={<Payment />} />
+<Route path="/orders" element={<Orders />} />
+<Route path="/review" element={<ReviewOrder />} />
 </Routes>
 
     </BrowserRouter>

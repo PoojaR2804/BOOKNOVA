@@ -5,7 +5,7 @@ import goggins from "../assets/books/goggins.jpg";
 
 const books = [
   {
-    id: 101,
+    id: 10,
     title: "Pride and Prejudice",
     author: "Jane Austen",
     category: "Fiction",
@@ -26,13 +26,13 @@ first entering a neighbourhood...`
   },
 
   {
-    id: 102,
+    id:11,
     title: "The Adventures of Sherlock Holmes",
     author: "Arthur Conan Doyle",
      category: "Mystery",
-    price: 349,
+    price:249,
     image: "https://www.gutenberg.org/cache/epub/1661/pg1661.cover.medium.jpg",
-    pdf: "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
+    viewLink: "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
     Pages:316,
     Ratings:4.5,
     aboutAuthor:
@@ -46,13 +46,13 @@ In his eyes she eclipses and predominates the whole of her sex...`
   },
 
   {
-    id: 103,
+    id:12,
     title: "Treasure Island",
     author: "Robert Louis Stevenson",
     category: "Adventure",
     price: 119,
     image: "https://www.gutenberg.org/cache/epub/120/pg120.cover.medium.jpg",
-    pdf: "https://www.gutenberg.org/files/120/120-h/120-h.htm",
+    viewLink: "https://www.gutenberg.org/files/120/120-h/120-h.htm",
     Pages:116,
     Ratings: 4.0,
     aboutAuthor:
@@ -66,13 +66,13 @@ asked me to write down the whole particulars about Treasure Island...`
   },
 
   {
-    id: 104,
+    id: 13,
     title: "The Wonderful Wizard of Oz",
     author: "L. Frank Baum",
     category: "Fantasy",
     price: 299,
     image: "https://www.gutenberg.org/cache/epub/55/pg55.cover.medium.jpg",
-    pdf: "https://www.gutenberg.org/files/55/55-h/55-h.htm",
+    viewLink: "https://www.gutenberg.org/files/55/55-h/55-h.htm",
     Pages:250,
     Ratings:4.2,
     aboutAuthor:

@@ -4,7 +4,7 @@ import "../styles/BookCard.css";
 import BookDetails from "./BookDetails";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -30,6 +30,8 @@ function BookCard({ selectedCategory }) {
         );
 
   const handleViewDetails = (book) => {
+    console.log("Clicked Book:", book);
+
     if (!isLoggedIn) {
       navigate("/login", {
         state: {

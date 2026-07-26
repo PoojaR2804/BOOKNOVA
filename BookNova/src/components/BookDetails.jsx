@@ -1,5 +1,5 @@
 import "../styles/BookDetails.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../services/api";
 import { useState, useEffect } from "react";
 
@@ -7,7 +7,8 @@ function BookDetails({ book, onClose }) {
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
 
-  // Clear message whenever a different book is opened
+  const navigate = useNavigate();
+
   useEffect(() => {
     setMessage("");
     setIsError(false);
@@ -50,8 +51,31 @@ function BookDetails({ book, onClose }) {
   };
 
   const buyNow = () => {
-    setMessage("🎉 Your order has been placed successfully!");
-    setIsError(false);
+    // Remove old payment data
+    localStorage.removeItem("totalAmount");
+
+    // Save only the selected book
+    localStorage.setItem(
+      "buyNowBook",
+      JSON.stringify({
+        id: book.id,
+        title: book.title,
+        price: Number(book.price),
+        image: book.image,
+      })
+    );
+
+    // Mark checkout type
+    localStorage.setItem("checkoutType", "buyNow");
+
+    console.log(
+      "BUY NOW BOOK:",
+      JSON.parse(localStorage.getItem("buyNowBook"))
+    );
+
+    onClose();
+
+    navigate("/checkout");
   };
 
   const handleClose = () => {
@@ -64,13 +88,19 @@ function BookDetails({ book, onClose }) {
     <div className="modal-overlay">
       <div className="modal">
 
-        <button className="close-btn" onClick={handleClose}>
+        <button
+          className="close-btn"
+          onClick={handleClose}
+        >
           ✖
         </button>
 
         <div className="modal-content">
 
-          <img src={book.image} alt={book.title} />
+          <img
+            src={book.image}
+            alt={book.title}
+          />
 
           <div className="details">
 
@@ -78,7 +108,9 @@ function BookDetails({ book, onClose }) {
 
             <h4>{book.author}</h4>
 
-            <p className="price">₹ {book.price}</p>
+            <p className="price">
+              ₹ {book.price}
+            </p>
 
             <p>
               <strong>Category:</strong> {book.category}
@@ -103,7 +135,9 @@ function BookDetails({ book, onClose }) {
             <p>{book.aboutAuthor}</p>
 
             {message && (
-              <div className={isError ? "message error" : "message success"}>
+              <div
+                className={isError ? "message error" : "message success"}
+              >
                 {message}
               </div>
             )}
@@ -111,7 +145,9 @@ function BookDetails({ book, onClose }) {
             <div className="modal-buttons">
 
               <Link to={`/read/${book.id}`}>
-                <button>📖 Read Online</button>
+                <button>
+                  📖 Read Online
+                </button>
               </Link>
 
               <button onClick={buyNow}>

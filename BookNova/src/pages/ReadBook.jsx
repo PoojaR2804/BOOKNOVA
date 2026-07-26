@@ -1,12 +1,13 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
-import books from "../data/books";
-import newArrivals from "../data/NewArrivals";
+import { useEffect, useState } from "react";
+import api from "../services/api";
 import "../styles/ReadBook.css";
-import { useEffect } from "react";
 
 function ReadBook() {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const [book, setBook] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,14 +20,27 @@ function ReadBook() {
           message: "🔒 Please login to read books.",
         },
       });
+      return;
     }
-  }, [navigate]);
 
-  const allBooks = [...books, ...newArrivals];
-  const book = allBooks.find((b) => b.id === Number(id));
+    fetchBook();
+  }, [id]);
+
+  const fetchBook = async () => {
+    try {
+      const res = await api.get(`/books/${id}/`);
+      setBook(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   if (!book) {
-    return <h2>Book not found</h2>;
+    return (
+      <h2 style={{ textAlign: "center", marginTop: "100px" }}>
+        Loading...
+      </h2>
+    );
   }
 
   return (
@@ -46,9 +60,11 @@ function ReadBook() {
 
         <div className="book-details">
           <h1>{book.title}</h1>
+
           <h3>Author: {book.author}</h3>
 
-          <h4>About the Author:</h4>
+          <h4>About the Author</h4>
+
           <p>{book.aboutAuthor}</p>
 
           <p>
@@ -56,7 +72,7 @@ function ReadBook() {
           </p>
 
           <p>
-            <strong>Pages:</strong> {book.Pages}
+            <strong>Pages:</strong> {book.pages}
           </p>
 
           <p>
@@ -68,7 +84,7 @@ function ReadBook() {
           </p>
 
           <p>
-            <strong>Rating:</strong> ⭐ {book.Ratings || "N/A"}
+            <strong>Rating:</strong> ⭐ {book.ratings}
           </p>
         </div>
       </div>
@@ -81,12 +97,28 @@ function ReadBook() {
         </pre>
 
         <p className="preview-note">
-          This is a preview of the book. Download the PDF to read the complete version.
+          This is only a preview of the book. Click <b>View Full Book</b> to
+          read online or <b>Download PDF</b> to save it for offline reading.
         </p>
 
-        <a href={book.pdf} download className="download-btn">
-          Download PDF
-        </a>
+       <div className="book-actions">
+  <a
+    href={book.viewLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="view-btn"
+  >
+    📖 View Full Book
+  </a>
+
+  <a
+    href={book.downloadLink}
+    download={`${book.title}.pdf`}
+    className="download-btn"
+  >
+    ⬇ Download PDF
+  </a>
+</div>
       </div>
     </div>
   );

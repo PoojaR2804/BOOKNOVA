@@ -55,7 +55,7 @@
 .cart-price {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #28a745;
+  color: #2b703b;
 }
 
 .cart-actions {
@@ -83,12 +83,12 @@
 }
 
 .checkout-btn {
-  background: #28a745;
+  background: #226d33;
   color: white;
 }
 
 .checkout-btn:hover {
-  background: #218838;
+  background: #1b5f2a;
 }
 
 .cart-summary {
@@ -106,13 +106,13 @@
 
 .total-price {
   font-size: 1.5rem;
-  color: #28a745;
+  color: #267037;
   font-weight: bold;
 }
 
 .place-order-btn {
   margin-top: 20px;
-  background: #ff9800;
+  background: #174c18;
   color: white;
   padding: 12px 28px;
   border: none;
@@ -123,7 +123,7 @@
 }
 
 .place-order-btn:hover {
-  background: #e68900;
+  background: #224a16;
 }
 
 @media (max-width: 768px) {

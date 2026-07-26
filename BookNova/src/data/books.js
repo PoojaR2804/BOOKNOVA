@@ -17,16 +17,20 @@ const books = [
     price: 199,
     category: "Fiction",
     image: "https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg",
-     pdf: "/books/PrideAndPrejudice.pdf",
-     Pages:352,
-     Ratings:4.8,
-     aboutAuthor: "Jane Austen (1775–1817) was one of England's greatest novelists. She is famous for her insightful stories about love, society, and family life. Her novels include Pride and Prejudice, Emma, and Sense and Sensibility.",
-     preview: `Chapter 1
-     It is a truth universally acknowledged, that a single man in possession
+    viewLink : "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm",
+    downloadLink: "https://www.gutenberg.org/files/1342/1342-pdf.pdf",
+    Pages:352,
+    Ratings:4.8,
+    aboutAuthor: "Jane Austen (1775–1817) was one of England's greatest novelists. She is famous for her insightful stories about love, society, and family life. Her novels include Pride and Prejudice, Emma, and Sense and Sensibility.",
+    preview: `Chapter 1
+
+It is a truth universally acknowledged, that a single man in possession
 of a good fortune, must be in want of a wife.
 
 However little known the feelings or views of such a man may be on his
-first entering a neighbourhood...`
+first entering a neighbourhood, this truth was accepted by the families
+living nearby.....
+`
   },
   {
     id: 2,
@@ -35,7 +39,8 @@ first entering a neighbourhood...`
     category: "Fiction",
     price: 149,
     image: "https://www.gutenberg.org/cache/epub/11/pg11.cover.medium.jpg",
-    pdf: "/books/AliceInWonderland.pdf",
+    viewLink: "https://www.gutenberg.org/files/11/11-h/11-h.htm",
+    downloadLink: "https://www.gutenberg.org/files/11/11-pdf.pdf",
     Pages:146,
     Ratings:4.5,
     aboutAuthor: "Lewis Carroll (1832–1898) was an English writer, mathematician, and photographer. He is best known for Alice's Adventures in Wonderland and Through the Looking-Glass.",
@@ -55,9 +60,9 @@ Suddenly, a White Rabbit with pink eyes ran close by her...
     title: "The Adventures of Sherlock Holmes",
     author: "Arthur Conan Doyle",
      category: "Mystery",
-    price: 200,
+    price:249,
     image:  "https://www.gutenberg.org/cache/epub/1661/pg1661.cover.medium.jpg",
-    pdf: "/books/SherlockHolmes.pdf",
+    viewLink: "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
     Pages:316,
     Ratings:4.2,
     aboutAuthor: "Sir Arthur Conan Doyle (1859–1930) was a British writer and physician. He created the world-famous detective Sherlock Holmes, whose stories remain among the most popular mystery novels ever written.",
@@ -78,7 +83,7 @@ case before him with remarkable observation and logic...
     category: "Classic",
     price: 299,
     image: "https://www.gutenberg.org/cache/epub/174/pg174.cover.medium.jpg",
-    pdf: "/books/DorianGray.pdf",
+     viewLink: "https://www.gutenberg.org/files/174/174-h/174-h.htm",
     Pages:326,
     Ratings:3.8,
     aboutAuthor: "Oscar Wilde (1854–1900) was an Irish poet, playwright, and novelist. Known for his wit and literary brilliance, his only novel, The Picture of Dorian Gray, is considered a classic of English literature.",aboutAuthor: "H. G. Wells (1866–1946) was an English novelist often called the 'Father of Science Fiction.' His famous works include The Time Machine, The Invisible Man, and The War of the Worlds.",
@@ -100,7 +105,7 @@ Beauty, youth, and ambition soon changed everything...
      category: "Science Fiction",
     price: 199,
     image: "https://www.gutenberg.org/cache/epub/35/pg35.cover.medium.jpg",
-    pdf: "/books/TheTimeMachine.pdf",
+     viewLink: "https://www.gutenberg.org/files/35/35-h/35-h.htm",
     Pages:134,
     Ratings:4.9,
     aboutAuthor: "H. G. Wells (1866–1946) was an English novelist often called the 'Father of Science Fiction.' His famous works include The Time Machine, The Invisible Man, and The War of the Worlds.",
@@ -122,7 +127,7 @@ No one imagined what he would soon discover in the distant future...
     category: "Adventure",
     price: 199,
     image: "https://www.gutenberg.org/cache/epub/120/pg120.cover.medium.jpg",
-    pdf: "/books/TreasureIsland.pdf",
+    viewLink : "https://www.gutenberg.org/files/120/120-h/120-h.htm",
     Pages:116,
     Ratings:4.0,
     aboutAuthor: "Robert Louis Stevenson (1850–1894) was a Scottish novelist and travel writer. He is best known for Treasure Island, Kidnapped, and Strange Case of Dr Jekyll and Mr Hyde.",
@@ -143,7 +148,7 @@ bringing with him a mysterious sea chest and an old treasure map...
     category: "Horror",
     price: 299,
     image: "https://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg",
-    pdf: "/books/Dracula.pdf",
+    viewLink: "https://www.gutenberg.org/files/345/345-h/345-h.htm",
     Pages:216,
     Ratings:3.9,
     aboutAuthor: "Bram Stoker (1847–1912) was an Irish author best known for writing Dracula, one of the most influential horror novels ever published.",
@@ -165,7 +170,7 @@ Ignoring their fears, he pressed on toward the mysterious castle...
     category: "Science Fiction",
     price: 249,
     image: "https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg",
-    pdf: "/books/Frankenstein.pdf",
+    viewLink: "https://www.gutenberg.org/files/84/84-h/84-h.htm",
     Pages:236,
     Ratings:4.3,
     aboutAuthor: "Mary Shelley (1797–1851) was an English novelist who wrote Frankenstein at the age of eighteen. She is regarded as one of the pioneers of science fiction.",
