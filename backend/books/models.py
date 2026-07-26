@@ -6,11 +6,13 @@ class Book(models.Model):
     category = models.CharField(max_length=100)
     price = models.IntegerField()
     image = models.URLField()
-    pdf = models.CharField(max_length=300)
+
+    viewLink = models.URLField()
+    downloadLink = models.CharField(max_length=300)
+    preview = models.TextField()
     pages = models.IntegerField()
     ratings = models.FloatField()
     aboutAuthor = models.TextField()
-    preview = models.TextField()
 
     def __str__(self):
         return self.title

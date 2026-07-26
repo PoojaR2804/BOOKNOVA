@@ -1,4 +1,9 @@
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -7,10 +12,17 @@ SECRET_KEY = 'django-insecure-9)3e+r0qhm=&!ljfdwz^b!$z&kfrcv96(!pw$qppm*!&yls64n
 
 DEBUG = True
 
-
 ALLOWED_HOSTS = [
     "booknova-backend-0nne.onrender.com",
+    "127.0.0.1",
+    "localhost",
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
+    "https://booknova-backend-0nne.onrender.com",
+     "https://booknova-tzld.vercel.app",
+] 
 
 
 INSTALLED_APPS = [
@@ -111,9 +123,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
 
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://booknova-tzld.vercel.app",
-]
 
 
 REST_FRAMEWORK = {
@@ -121,3 +130,10 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
 }
+
+
+# Razorpay Configuration
+
+RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID")
+
+RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET")
