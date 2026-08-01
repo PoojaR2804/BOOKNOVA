@@ -1,4 +1,5 @@
 import razorpay
+import traceback
 
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
@@ -31,6 +32,11 @@ def create_payment(request):
 
     try:
 
+        print("========== CREATE PAYMENT ==========")
+        print("User:", request.user)
+        print("KEY ID:", settings.RAZORPAY_KEY_ID)
+        print("KEY SECRET PRESENT:", bool(settings.RAZORPAY_KEY_SECRET))
+
         checkout_type = request.data.get("checkoutType")
 
         # ---------------- BUY NOW ---------------- #
@@ -47,6 +53,7 @@ def create_payment(request):
 
             try:
                 book = Book.objects.get(id=book_id)
+
             except Book.DoesNotExist:
                 return Response(
                     {"error": "Book not found."},
@@ -72,6 +79,8 @@ def create_payment(request):
                 for item in cart_items
             )
 
+        print("Creating Razorpay Order...")
+
         razorpay_order = client.order.create({
 
             "amount": int(total * 100),
@@ -79,6 +88,8 @@ def create_payment(request):
             "payment_capture": 1
 
         })
+
+        print("Razorpay Order Created:", razorpay_order["id"])
 
         return Response({
 
@@ -91,17 +102,19 @@ def create_payment(request):
 
     except Exception as e:
 
-        print(e)
+        traceback.print_exc()
 
         return Response(
             {
-                "error": str(e)
+                "error": str(e),
+                "type": str(type(e))
             },
             status=400
         )
 
 
 # ---------------- SAVE ORDER AFTER PAYMENT ---------------- #
+
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def save_order(request):
@@ -114,7 +127,6 @@ def save_order(request):
     address = request.data.get("address")
     phone = request.data.get("phone")
 
-    # rest of your code...
     # ---------------- BUY NOW ---------------- #
 
     if checkout_type == "buyNow":
