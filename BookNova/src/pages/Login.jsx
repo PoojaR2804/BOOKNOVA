@@ -44,7 +44,6 @@ function Login() {
       setTimeout(() => {
         window.location.href = "/";
       }, 1500);
-
     } catch (err) {
       setMessage("❌ Invalid username or password");
       setIsError(true);
@@ -55,7 +54,6 @@ function Login() {
   return (
     <div className="login-page">
       <div className="login-card">
-
         <h2>Login</h2>
 
         {message && (
@@ -64,14 +62,14 @@ function Login() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit}>
-
+        <form onSubmit={handleSubmit} autoComplete="off">
           <input
             type="text"
             name="username"
             placeholder="Username"
             value={form.username}
             onChange={handleChange}
+            autoComplete="off"
             required
           />
 
@@ -81,20 +79,21 @@ function Login() {
             placeholder="Password"
             value={form.password}
             onChange={handleChange}
+            autoComplete="off"
             required
           />
 
           <button type="submit">
             Login
           </button>
-
         </form>
 
         <p>
           Don't have an account?{" "}
-          <Link to="/register">Register</Link>
+          <Link to="/register">
+            Register
+          </Link>
         </p>
-
       </div>
     </div>
   );

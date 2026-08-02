@@ -32,6 +32,24 @@ function Navbar() {
     });
   };
 
+  const goToSection = (sectionId) => {
+    if (window.location.pathname !== "/") {
+      navigate("/", {
+        state: {
+          scrollTo: sectionId,
+        },
+      });
+    } else {
+      const section = document.getElementById(sectionId);
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -50,11 +68,21 @@ function Navbar() {
         </li>
 
         <li>
-          <a href="#books">Books</a>
+          <button
+            className="nav-link-btn"
+            onClick={() => goToSection("books")}
+          >
+            Books
+          </button>
         </li>
 
         <li>
-          <a href="#categories">Categories</a>
+          <button
+            className="nav-link-btn"
+            onClick={() => goToSection("categories")}
+          >
+            Categories
+          </button>
         </li>
 
         <li>
