@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/Navbar.css";
-import { FaBook } from "react-icons/fa";
+import { FaBook, FaBars, FaTimes } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
@@ -8,6 +8,7 @@ function Navbar() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const access = localStorage.getItem("access");
@@ -30,9 +31,13 @@ function Navbar() {
         message: "✅ Logged out successfully!",
       },
     });
+
+    setMenuOpen(false);
   };
 
   const goToSection = (sectionId) => {
+    setMenuOpen(false);
+
     if (window.location.pathname !== "/") {
       navigate("/", {
         state: {
@@ -57,14 +62,21 @@ function Navbar() {
           <FaBook />
         </span>
 
-        <span className="logo-text">
-          BookNova
-        </span>
+        <span className="logo-text">BookNova</span>
       </div>
 
-      <ul className="nav-links">
+      <div
+        className="menu-icon"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </div>
+
+      <ul className={`nav-links ${menuOpen ? "active-menu" : ""}`}>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={() => setMenuOpen(false)}>
+            Home
+          </Link>
         </li>
 
         <li>
@@ -86,7 +98,7 @@ function Navbar() {
         </li>
 
         <li>
-          <Link to="/cart">
+          <Link to="/cart" onClick={() => setMenuOpen(false)}>
             🛒 Cart
           </Link>
         </li>
@@ -94,7 +106,7 @@ function Navbar() {
         {isLoggedIn ? (
           <>
             <li>
-              <Link to="/orders">
+              <Link to="/orders" onClick={() => setMenuOpen(false)}>
                 Orders
               </Link>
             </li>
@@ -118,6 +130,7 @@ function Navbar() {
               <Link
                 to="/login"
                 className="login-btn"
+                onClick={() => setMenuOpen(false)}
               >
                 Login
               </Link>
@@ -127,6 +140,7 @@ function Navbar() {
               <Link
                 to="/register"
                 className="register-btn"
+                onClick={() => setMenuOpen(false)}
               >
                 Register
               </Link>

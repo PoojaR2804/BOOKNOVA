@@ -33,9 +33,76 @@
     cursor:pointer;
     box-shadow:0 8px 20px rgba(0,0,0,.06);
     transition:.3s;
+    font-weight:600;
 }
 
 .category-list button:hover{
     background:#5F8D4E;
     color:white;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:992px){
+
+    .categories{
+        padding:60px 40px;
+    }
+
+    .categories h2{
+        font-size:34px;
+    }
+
+    .category-list{
+        gap:15px;
+    }
+
+    .category-list button{
+        padding:14px 24px;
+        font-size:15px;
+    }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:768px){
+
+    .categories{
+        padding:50px 20px;
+    }
+
+    .categories h2{
+        font-size:28px;
+        margin-bottom:30px;
+    }
+
+    .category-list{
+        gap:12px;
+    }
+
+    .category-list button{
+        width:100%;
+        max-width:280px;
+        padding:14px;
+        font-size:15px;
+    }
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width:480px){
+
+    .categories{
+        padding:40px 15px;
+    }
+
+    .categories h2{
+        font-size:24px;
+    }
+
+    .category-list button{
+        max-width:100%;
+        font-size:14px;
+        padding:12px;
+    }
 }

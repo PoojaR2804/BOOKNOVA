@@ -1,224 +1,305 @@
-.orders-container{
-    max-width:1100px;
-    margin:50px auto;
-    padding:20px;
+.orders-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
 }
 
-.orders-container h1{
-    font-size:40px;
-    color:#2F3E2F;
-    text-align:center;
-    margin-bottom:35px;
-    font-weight:700;
+.orders-container h1 {
+    font-size: 40px;
+    color: #2F3E2F;
+    text-align: center;
+    margin-bottom: 35px;
+    font-weight: 700;
 }
 
-/* Order Card */
+/* ---------- Order Card ---------- */
 
-.order-card{
-    width:100%;
-    margin-bottom:30px;
-    background:#fff;
-    border-radius:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-    overflow:hidden;
-    transition:.3s;
+.order-card {
+    width: 100%;
+    margin-bottom: 30px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    overflow: hidden;
+    transition: .3s;
 }
 
-.order-card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 25px rgba(0,0,0,.12);
+.order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,.12);
 }
 
-/* Header */
+/* ---------- Header ---------- */
 
-.order-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:22px 30px;
-    background:#f7faf5;
-    border-bottom:1px solid #e6ece2;
+.order-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 30px;
+    background: #f7faf5;
+    border-bottom: 1px solid #e6ece2;
 }
 
-.label{
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    color:#777;
-    margin-bottom:5px;
+.label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #777;
+    margin-bottom: 5px;
 }
 
 .order-top h3,
-.order-top h4{
-    margin:0;
-    font-size:24px;
-    color:#2F3E2F;
+.order-top h4 {
+    margin: 0;
+    font-size: 22px;
+    color: #2F3E2F;
 }
 
-.paid-badge{
-    background:#2E7D32;
-    color:#fff;
-    padding:10px 22px;
-    border-radius:30px;
-    font-size:15px;
-    font-weight:600;
+.paid-badge {
+    background: #2E7D32;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
 }
 
-/* Book Section */
+/* ---------- Books ---------- */
 
-.books-section{
-    padding:25px;
+.books-section {
+    padding: 25px;
 }
 
-.book-card{
-    display:flex;
-    align-items:center;
-    gap:30px;
-    width:100%;
-    background:#fafafa;
-    border:1px solid #ececec;
-    border-radius:15px;
-    padding:25px;
-    box-sizing:border-box;
+.book-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: #fafafa;
+    border: 1px solid #ececec;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
 }
 
-.book-image{
-    width:140px;
-    height:200px;
-    object-fit:cover;
-    border-radius:10px;
-    box-shadow:0 5px 12px rgba(0,0,0,.12);
+.book-image {
+    width: 140px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 12px rgba(0,0,0,.12);
+    flex-shrink: 0;
 }
 
-.book-details{
-    flex:1;
+.book-details {
+    flex: 1;
 }
 
-.book-details h2{
-    margin:0 0 15px;
-    font-size:34px;
-    color:#2F3E2F;
+.book-details h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: #2F3E2F;
 }
 
-.book-details p{
-    margin:8px 0;
-    font-size:17px;
-    color:#555;
-    line-height:1.6;
+.book-details p {
+    margin: 8px 0;
+    font-size: 17px;
+    color: #555;
+    line-height: 1.6;
 }
 
-.book-details strong{
-    color:#333;
+.book-details h3 {
+    margin-top: 18px;
+    font-size: 28px;
+    color: #2E7D32;
 }
 
-.book-details h3{
-    margin-top:18px;
-    font-size:34px;
-    color:#2E7D32;
-    font-weight:700;
+/* ---------- Footer ---------- */
+
+.order-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 30px;
+    background: #f7faf5;
+    border-top: 1px solid #e6ece2;
 }
 
-/* Footer */
-
-.order-footer{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    padding:20px 30px;
-    background:#f7faf5;
-    border-top:1px solid #e6ece2;
+.order-footer h2 {
+    font-size: 28px;
+    color: #2E7D32;
 }
 
-.order-footer h2{
-    margin:0;
-    font-size:30px;
-    color:#2E7D32;
+/* ---------- Empty Orders ---------- */
+
+.empty-orders {
+    text-align: center;
+    padding: 80px 20px;
 }
 
-/* Empty Orders */
-
-.empty-orders{
-    text-align:center;
-    padding:80px 20px;
+.empty-orders img {
+    width: 220px;
+    max-width: 100%;
+    margin-bottom: 25px;
 }
 
-.empty-orders img{
-    width:220px;
-    margin-bottom:25px;
+.empty-orders h2 {
+    color: #2F3E2F;
+    margin-bottom: 10px;
 }
 
-.empty-orders h2{
-    color:#2F3E2F;
-    margin-bottom:10px;
+.empty-orders p {
+    color: #666;
+    font-size: 18px;
 }
 
-.empty-orders p{
-    color:#666;
-    font-size:18px;
+.shop-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 30px;
+    background: #5F8D4E;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .3s;
 }
 
-.shop-btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:14px 30px;
-    background:#5F8D4E;
-    color:#fff;
-    text-decoration:none;
-    font-size:17px;
-    font-weight:600;
-    border-radius:10px;
-    transition:.3s;
+.shop-btn:hover {
+    background: #4B743D;
 }
 
-.shop-btn:hover{
-    background:#4B743D;
+/* ---------- Tablet ---------- */
+
+@media (max-width: 992px) {
+
+    .orders-container {
+        padding: 15px;
+    }
+
+    .order-top {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .book-card {
+        gap: 20px;
+    }
+
+    .book-details h2 {
+        font-size: 24px;
+    }
+
+    .book-details h3 {
+        font-size: 24px;
+    }
 }
 
-/* Mobile */
+/* ---------- Mobile ---------- */
 
-@media(max-width:768px){
+@media (max-width: 768px) {
 
-.orders-container{
-    padding:15px;
+    .orders-container h1 {
+        font-size: 30px;
+    }
+
+    .order-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .paid-badge {
+        align-self: flex-start;
+    }
+
+    .book-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .book-image {
+        width: 170px;
+        height: 240px;
+    }
+
+    .book-details {
+        width: 100%;
+    }
+
+    .book-details h2 {
+        font-size: 22px;
+    }
+
+    .book-details p {
+        font-size: 15px;
+    }
+
+    .book-details h3 {
+        font-size: 24px;
+    }
+
+    .order-footer {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .order-footer h2 {
+        font-size: 22px;
+    }
 }
 
-.orders-container h1{
-    font-size:32px;
-}
+/* ---------- Small Mobile ---------- */
 
-.order-top{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:15px;
-}
+@media (max-width: 480px) {
 
-.book-card{
-    flex-direction:column;
-    text-align:center;
-}
+    .orders-container {
+        margin: 30px auto;
+        padding: 10px;
+    }
 
-.book-image{
-    width:180px;
-    height:260px;
-}
+    .orders-container h1 {
+        font-size: 26px;
+    }
 
-.book-details{
-    width:100%;
-}
+    .books-section {
+        padding: 15px;
+    }
 
-.book-details h2{
-    font-size:28px;
-}
+    .book-card {
+        padding: 18px;
+    }
 
-.book-details h3{
-    font-size:28px;
-}
+    .book-image {
+        width: 140px;
+        height: 200px;
+    }
 
-.order-footer{
-    justify-content:center;
-}
+    .book-details h2 {
+        font-size: 20px;
+    }
 
-.order-footer h2{
-    font-size:24px;
-}
+    .book-details p {
+        font-size: 14px;
+    }
+
+    .book-details h3 {
+        font-size: 20px;
+    }
+
+    .order-footer h2 {
+        font-size: 20px;
+    }
+
+    .empty-orders img {
+        width: 160px;
+    }
+
+    .empty-orders p {
+        font-size: 15px;
+    }
+
+    .shop-btn {
+        width: 100%;
+        text-align: center;
+    }
 }

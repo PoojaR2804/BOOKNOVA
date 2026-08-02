@@ -1,107 +1,205 @@
-.hero{
-    width:100%;
-    min-height:88vh;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:60px 80px;
-
-    background:#f4faf4;
+.hero {
+    width: 100%;
+    min-height: 88vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+    background: #f4faf4;
+    gap: 60px;
 }
 
-.hero-left{
-    width:50%;
+.hero-left {
+    flex: 1;
 }
 
-.hero-tag{
-    color:#5d8d47;
-    font-size:15px;
-    font-weight:600;
-    letter-spacing:2px;
-    margin-bottom:20px;
+.hero-tag {
+    color: #5d8d47;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
 }
 
-.hero-left h1{
-    font-size:64px;
-    line-height:1.15;
-    color:#2f3e2c;
-    margin-bottom:25px;
+.hero-left h1 {
+    font-size: 64px;
+    line-height: 1.15;
+    color: #2f3e2c;
+    margin-bottom: 25px;
 }
 
-.hero-left h1 span{
-    color:#5d8d47;
+.hero-left h1 span {
+    color: #5d8d47;
 }
 
-.hero-desc{
-    font-size:18px;
-    color:#666;
-    line-height:1.8;
-    max-width:520px;
-    margin-bottom:35px;
+.hero-desc {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 35px;
 }
 
-.hero-buttons{
-    display:flex;
-    gap:20px;
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.primary-btn{
-    background:#5d8d47;
-    color:white;
-    border:none;
-    padding:16px 34px;
-    border-radius:14px;
-    font-size:17px;
-    cursor:pointer;
-    transition:.3s;
+.primary-btn {
+    background: #5d8d47;
+    color: white;
+    border: none;
+    padding: 16px 34px;
+    border-radius: 14px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .3s;
 }
 
-.primary-btn:hover{
-    background:#4d783a;
+.primary-btn:hover {
+    background: #4d783a;
 }
 
-.secondary-btn{
-    background:white;
-    color:#5d8d47;
-    border:2px solid #cfe7c7;
-    padding:16px 34px;
-    border-radius:14px;
-    font-size:17px;
-    cursor:pointer;
-    transition:.3s;
+.secondary-btn {
+    background: white;
+    color: #5d8d47;
+    border: 2px solid #cfe7c7;
+    padding: 16px 34px;
+    border-radius: 14px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .3s;
 }
 
-.secondary-btn:hover{
-    background:#eef7ea;
+.secondary-btn:hover {
+    background: #eef7ea;
 }
 
-.hero-right{
-    flex:1;
-    display:flex;
-    justify-content:center;
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-.hero-right img{
-    width:100%;
-    max-width:500px;
-    border-radius:25px;
-    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+.hero-right img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0,0,0,.15);
 }
 
-.book-card{
-    width:340px;
-    height:340px;
-    background:white;
+.book-card {
+    width: 340px;
+    height: 340px;
+    background: white;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 130px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
 
-    border-radius:35px;
+/* =======================
+   Tablet
+======================= */
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+@media (max-width: 992px) {
 
-    font-size:130px;
+    .hero {
+        padding: 50px 40px;
+        gap: 40px;
+    }
 
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    .hero-left h1 {
+        font-size: 48px;
+    }
+
+    .hero-desc {
+        font-size: 17px;
+    }
+
+    .hero-right img {
+        max-width: 420px;
+    }
+}
+
+/* =======================
+   Mobile
+======================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 35px;
+        min-height: auto;
+    }
+
+    .hero-left,
+    .hero-right {
+        width: 100%;
+    }
+
+    .hero-left h1 {
+        font-size: 40px;
+    }
+
+    .hero-desc {
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+        max-width: 260px;
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+
+    .hero-right img {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+/* =======================
+   Small Phones
+======================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .hero-left h1 {
+        font-size: 32px;
+    }
+
+    .hero-tag {
+        font-size: 13px;
+    }
+
+    .hero-desc {
+        font-size: 15px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        max-width: 100%;
+        font-size: 15px;
+    }
+
+    .hero-right img {
+        width: 100%;
+    }
 }

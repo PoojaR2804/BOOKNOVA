@@ -54,13 +54,15 @@ function Register() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete="off">
+
           <input
             type="text"
             name="username"
             placeholder="Username"
             value={form.username}
             onChange={handleChange}
+            autoComplete="off"
             required
           />
 
@@ -70,6 +72,7 @@ function Register() {
             placeholder="Email"
             value={form.email}
             onChange={handleChange}
+            autoComplete="off"
             required
           />
 
@@ -79,17 +82,21 @@ function Register() {
             placeholder="Password"
             value={form.password}
             onChange={handleChange}
+            autoComplete="new-password"
             required
           />
 
           <button type="submit">
             Register
           </button>
+
         </form>
 
         <p>
           Already have an account?{" "}
-          <Link to="/login">Login</Link>
+          <Link to="/login">
+            Login
+          </Link>
         </p>
 
       </div>

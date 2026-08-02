@@ -1,136 +1,107 @@
-.new-arrivals {
-    padding: 80px;
-    background: #ffffff;
+.new-arrivals{
+    padding:80px;
+    background:#ffffff;
 }
 
-.section-tag {
-    text-align: center;
-    color: #5F8D4E;
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
+.section-tag{
+    text-align:center;
+    color:#5F8D4E;
+    font-weight:600;
+    letter-spacing:2px;
+    margin-bottom:10px;
 }
 
-.new-arrivals h2 {
-    text-align: center;
-    font-size: 42px;
-    color: #2F3E2F;
-    margin-bottom: 50px;
+.new-arrivals h2{
+    text-align:center;
+    font-size:42px;
+    color:#2F3E2F;
+    margin-bottom:50px;
 }
 
-.books-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+.books-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
 }
 
-.book {
-    background: #F8FCF6;
-    border-radius: 20px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: 0.3s;
-}
-
-.book:hover {
-    transform: translateY(-8px);
-}
-
-.book-img {
-    width: 180px;
-    height: 250px;
-    margin: 0 auto 20px;
-    overflow: hidden;
-    border-radius: 15px;
-}
-
-.book-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.book h3 {
-    font-size: 22px;
-    color: #2F3E2F;
-    margin-bottom: 8px;
-}
-
-.book p {
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.book span {
-    display: block;
-    font-size: 20px;
-    font-weight: bold;
-    color: #5F8D4E;
-    margin-bottom: 20px;
-}
-
-.new-book-buttons{
-    display:flex;
-    justify-content:space-between;
-    gap:12px;
-    margin-top:15px;
-}
-
-.new-book-buttons button{
-    width:48%;
-    background:#5F8D4E;
-    color:white;
-    border:none;
-    padding:12px;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:14px;
+.book{
+    background:#F8FCF6;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
     transition:.3s;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:520px;
 }
 
-.new-book-buttons button:hover{
-    background:#4B743D;
+.book:hover{
+    transform:translateY(-8px);
 }
 
-.read-btn{
-    background:#3F6B4F !important;
+.book-img{
+    width:180px;
+    height:250px;
+    margin:0 auto 20px;
+    overflow:hidden;
+    border-radius:15px;
 }
 
-.read-btn:hover{
-    background:#2F523C !important;
-}
-@media (max-width: 992px) {
-    .books-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.book-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-@media (max-width: 600px) {
-    .books-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .new-arrivals {
-        padding: 50px 20px;
-    }
+.book h3{
+    font-size:22px;
+    color:#2F3E2F;
+    margin-bottom:8px;
+    min-height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
+
+.book p{
+    color:#666;
+    margin-bottom:10px;
+}
+
+.book span{
+    display:block;
+    font-size:20px;
+    font-weight:bold;
+    color:#5F8D4E;
+    margin-bottom:20px;
+}
+
+/* Buttons */
+
 .new-buttons{
     display:flex;
     justify-content:center;
-    gap:10px;
-    margin-top:15px;
+    gap:12px;
+    margin-top:auto;
 }
 
 .new-buttons button{
+    width:120px;
+    height:48px;
+
     background:#5F8D4E;
     color:#fff;
     border:none;
-    padding:10px 18px;
-    border-radius:8px;
+    border-radius:10px;
+
     cursor:pointer;
-    font-size:15px;
     transition:.3s;
+
+    font-size:14px;
+    font-weight:600;
 }
 
 .new-buttons button:hover{
@@ -140,6 +111,90 @@
 .new-buttons a{
     text-decoration:none;
 }
-.new-buttons button {
-    cursor: pointer;
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:992px){
+
+    .new-arrivals{
+        padding:60px 40px;
+    }
+
+    .new-arrivals h2{
+        font-size:34px;
+    }
+
+    .books-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:768px){
+
+    .new-arrivals{
+        padding:50px 20px;
+    }
+
+    .new-arrivals h2{
+        font-size:28px;
+        margin-bottom:35px;
+    }
+
+    .books-grid{
+        grid-template-columns:1fr;
+    }
+
+    .book{
+        max-width:350px;
+        margin:auto;
+    }
+
+    .new-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .new-buttons button{
+        width:100%;
+        max-width:220px;
+    }
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width:480px){
+
+    .new-arrivals{
+        padding:40px 15px;
+    }
+
+    .new-arrivals h2{
+        font-size:24px;
+    }
+
+    .book{
+        padding:20px;
+        min-height:auto;
+    }
+
+    .book-img{
+        width:160px;
+        height:220px;
+    }
+
+    .book h3{
+        font-size:20px;
+    }
+
+    .book span{
+        font-size:18px;
+    }
+
+    .new-buttons button{
+        font-size:13px;
+        height:44px;
+    }
 }

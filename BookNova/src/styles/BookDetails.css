@@ -6,10 +6,14 @@
     justify-content:center;
     align-items:center;
     z-index:999;
+    padding:20px;
 }
 
 .modal{
-    width:850px;
+    width:100%;
+    max-width:900px;
+    max-height:90vh;
+    overflow-y:auto;
     background:white;
     border-radius:15px;
     padding:30px;
@@ -29,6 +33,7 @@
 .modal-content{
     display:flex;
     gap:40px;
+    align-items:flex-start;
 }
 
 .modal-content img{
@@ -36,26 +41,45 @@
     height:350px;
     object-fit:cover;
     border-radius:10px;
+    flex-shrink:0;
 }
 
 .details{
+    flex:1;
     text-align:left;
 }
 
 .details h2{
     margin-bottom:10px;
+    color:#2f3e2c;
+}
+
+.details h4{
+    margin-bottom:10px;
+    color:#666;
 }
 
 .price{
     color:#3F6B4F;
     font-size:24px;
     font-weight:bold;
+    margin-bottom:15px;
+}
+
+.details p{
+    margin:8px 0;
+    line-height:1.6;
 }
 
 .modal-buttons{
     display:flex;
+    flex-wrap:wrap;
     gap:15px;
     margin-top:25px;
+}
+
+.modal-buttons a{
+    text-decoration:none;
 }
 
 .modal-buttons button{
@@ -65,23 +89,111 @@
     cursor:pointer;
     background:#3F6B4F;
     color:white;
-}
-.message {
-    margin: 15px 0;
-    padding: 12px;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: 600;
+    font-weight:600;
+    transition:.3s;
 }
 
-.success {
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+.modal-buttons button:hover{
+    background:#2e563d;
 }
 
-.error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+.message{
+    margin:15px 0;
+    padding:12px;
+    border-radius:8px;
+    text-align:center;
+    font-weight:600;
+}
+
+.success{
+    background:#d4edda;
+    color:#155724;
+    border:1px solid #c3e6cb;
+}
+
+.error{
+    background:#f8d7da;
+    color:#721c24;
+    border:1px solid #f5c6cb;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:992px){
+
+    .modal{
+        max-width:95%;
+        padding:25px;
+    }
+
+    .modal-content{
+        gap:25px;
+    }
+
+    .modal-content img{
+        width:220px;
+        height:320px;
+    }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:768px){
+
+    .modal{
+        padding:20px;
+    }
+
+    .modal-content{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .modal-content img{
+        width:200px;
+        height:280px;
+    }
+
+    .details{
+        width:100%;
+        text-align:center;
+    }
+
+    .modal-buttons{
+        justify-content:center;
+    }
+
+    .modal-buttons button{
+        width:100%;
+        max-width:250px;
+    }
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width:480px){
+
+    .modal{
+        padding:15px;
+    }
+
+    .modal-content img{
+        width:170px;
+        height:240px;
+    }
+
+    .details h2{
+        font-size:22px;
+    }
+
+    .price{
+        font-size:20px;
+    }
+
+    .close-btn{
+        font-size:20px;
+        right:15px;
+        top:15px;
+    }
 }

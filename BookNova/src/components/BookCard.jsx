@@ -5,6 +5,7 @@ import BookDetails from "./BookDetails";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
+
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -13,7 +14,6 @@ function BookCard({ selectedCategory }) {
   const [selectedBook, setSelectedBook] = useState(null);
 
   const navigate = useNavigate();
-  const isLoggedIn = localStorage.getItem("access");
 
   useEffect(() => {
     api
@@ -30,7 +30,7 @@ function BookCard({ selectedCategory }) {
         );
 
   const handleViewDetails = (book) => {
-    console.log("Clicked Book:", book);
+    const isLoggedIn = localStorage.getItem("access");
 
     if (!isLoggedIn) {
       navigate("/login", {
@@ -45,6 +45,8 @@ function BookCard({ selectedCategory }) {
   };
 
   const handleReadOnline = (bookId) => {
+    const isLoggedIn = localStorage.getItem("access");
+
     if (!isLoggedIn) {
       navigate("/login", {
         state: {
@@ -67,13 +69,32 @@ function BookCard({ selectedCategory }) {
         modules={[Navigation]}
         navigation
         spaceBetween={25}
-        slidesPerView={4}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+          },
+          576: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          992: {
+            slidesPerView: 3,
+          },
+          1200: {
+            slidesPerView: 4,
+          },
+        }}
       >
         {filteredBooks.map((book) => (
           <SwiperSlide key={book.id}>
             <div className="book">
               <div className="book-img">
-                <img src={book.image} alt={book.title} />
+                <img
+                  src={book.image}
+                  alt={book.title}
+                />
               </div>
 
               <h3>{book.title}</h3>
@@ -83,15 +104,21 @@ function BookCard({ selectedCategory }) {
               <span>₹ {book.price}</span>
 
               <div className="book-card-buttons">
-                <button onClick={() => handleViewDetails(book)}>
-                  View <br /> Details
+                <button
+                  onClick={() => handleViewDetails(book)}
+                >
+                  View
+                  <br />
+                  Details
                 </button>
 
                 <button
                   className="read-link"
                   onClick={() => handleReadOnline(book.id)}
                 >
-                  Read <br /> Online
+                  Read
+                  <br />
+                  Online
                 </button>
               </div>
             </div>
@@ -107,11 +134,12 @@ function BookCard({ selectedCategory }) {
       <p
         style={{
           textAlign: "center",
-          color: "#5fb139d8",
+          color: "#5F8D4E",
           marginTop: "20px",
+          fontWeight: "600",
         }}
       >
-        ← Click the arrows to explore more books →
+        ← Swipe or use arrows to explore more books →
       </p>
     </section>
   );

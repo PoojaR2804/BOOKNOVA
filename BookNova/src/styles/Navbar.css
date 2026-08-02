@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .navbar {
     width: 100%;
     height: 80px;
@@ -22,8 +28,6 @@
 }
 
 .logo-icon {
-    display: flex;
-    align-items: center;
     font-size: 32px;
     color: #5F8D4E;
 }
@@ -33,61 +37,45 @@
     font-weight: 700;
     font-style: italic;
     color: #5F8D4E;
-    line-height: 1;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    list-style: none;
     gap: 34px;
-    margin: 0;
-    padding: 0;
+    list-style: none;
 }
 
 .nav-links li {
     list-style: none;
 }
 
-/* Links and button links */
 .nav-links a,
 .nav-link-btn {
     text-decoration: none;
     color: #2F3E2F;
     padding: 10px 16px;
     border-radius: 10px;
-    transition: all 0.3s ease;
+    transition: .3s;
     font-size: 1.05rem;
     font-weight: 600;
-    letter-spacing: 0.3px;
     font-family: 'Poppins', sans-serif;
 }
 
-/* Button reset */
 .nav-link-btn {
     background: transparent;
     border: none;
     cursor: pointer;
-    outline: none;
 }
 
-/* Hover effect */
 .nav-links a:hover,
 .nav-link-btn:hover {
     background: #D6EFD8;
     color: #5F8D4E;
 }
 
-/* Remove focus outline */
 .nav-link-btn:focus {
     outline: none;
-    box-shadow: none;
-}
-
-.active {
-    background: #D6EFD8;
-    color: #5F8D4E !important;
-    font-weight: 700;
 }
 
 .login-btn,
@@ -95,13 +83,12 @@
 .logout-btn {
     background: #5F8D4E;
     color: white !important;
-    padding: 10px 22px;
-    border-radius: 10px;
     border: none;
+    border-radius: 10px;
+    padding: 10px 22px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
+    transition: .3s;
 }
 
 .login-btn:hover,
@@ -112,10 +99,125 @@
 }
 
 .welcome-user {
-    color: #2F3E2F;
     font-weight: 600;
-    font-size: 1rem;
-    margin-right: 15px;
-    display: flex;
-    align-items: center;
+    color: #2F3E2F;
+}
+
+/* Hamburger */
+
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    color: #5F8D4E;
+    cursor: pointer;
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media (max-width:992px) {
+
+    .navbar {
+        padding: 0 25px;
+    }
+
+    .logo-text {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width:768px) {
+
+    .navbar {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    .logo-text {
+        font-size: 1.8rem;
+    }
+
+    .logo-icon {
+        font-size: 26px;
+    }
+
+    .menu-icon {
+        display: block;
+        z-index: 2000;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: #EAF7EA;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        padding: 30px 0;
+        transition: .35s;
+        box-shadow: 0 8px 18px rgba(0,0,0,.1);
+    }
+
+    .nav-links.active-menu {
+        left: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a,
+    .nav-link-btn {
+        display: block;
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .login-btn,
+    .register-btn,
+    .logout-btn {
+        width: 85%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .welcome-user {
+        justify-content: center;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+}
+
+/* ===========================
+   Small Phones
+=========================== */
+
+@media (max-width:480px) {
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .logo-text {
+        font-size: 1.6rem;
+    }
+
+    .logo-icon {
+        font-size: 24px;
+    }
+
 }
