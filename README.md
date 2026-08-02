@@ -11,56 +11,62 @@ https://booknova-tzld.vercel.app/
 https://github.com/PoojaR2804/BOOKNOVA
 
 ✨ Features
+
 🔐 User Registration & Login (JWT Authentication)
+
 📚 Browse books by category
+
 🔍 Search books
+
 📖 View detailed book information
+
 📖 Read books online
+
 ⬇️ Download available book PDFs
+
 🛒 Add books to Cart
+
 ⚡ Buy Now option
+
 💳 Secure payment using Razorpay
+
 📦 Order history
+
 📱 Fully responsive design
-🛠️ Tech Stack
+
+🛠️ Tech Stack:
+
 Frontend
 React.js
 React Router
 Axios
 CSS3
+
 Backend
 Django
 Django REST Framework
 JWT Authentication
+
 Database
 SQLite
+
 Payment Gateway
 Razorpay
+
 Tools
 Postman
 Git
 GitHub
 Vercel
-📷 Screenshots
 
-Add screenshots of your application here.
-
-Example:
-
-Home Page
-Book Details
-Cart
-Checkout
-Payment
-Orders
 
 📂 Project Structure
+
 
 BOOKNOVA/
 │
 ├── .postman/
 ├── .vscode/
-│
 ├── backend/
 │   ├── accounts/
 │   ├── books/
@@ -89,9 +95,13 @@ BOOKNOVA/
 ├── postman/
 └── README.md
 
+
 ⚙️ Installation
+
 Clone the repository:
+
 git clone https://github.com/PoojaR2804/BOOKNOVA.git
+
 Backend:
 
 cd backend
@@ -105,6 +115,7 @@ pip install -r requirements.txt
 python manage.py migrate
 
 python manage.py runserver
+
 Frontend:
 
 cd frontend
