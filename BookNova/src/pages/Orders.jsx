@@ -100,7 +100,9 @@ function Orders() {
                         <p>
                           <strong>Quantity:</strong> {item.quantity}
                         </p>
+                      </div>
 
+                      <div className="book-price">
                         <h3>₹{item.price}</h3>
                       </div>
                     </div>

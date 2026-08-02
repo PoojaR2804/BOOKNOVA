@@ -5,9 +5,9 @@
 }
 
 .orders-container h1 {
+    text-align: center;
     font-size: 40px;
     color: #2F3E2F;
-    text-align: center;
     margin-bottom: 35px;
     font-weight: 700;
 }
@@ -16,17 +16,17 @@
 
 .order-card {
     width: 100%;
-    margin-bottom: 30px;
     background: #fff;
     border-radius: 18px;
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
     overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
     transition: .3s;
 }
 
 .order-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(0,0,0,.12);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.12);
 }
 
 /* ---------- Header ---------- */
@@ -35,34 +35,34 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
     padding: 22px 30px;
     background: #f7faf5;
     border-bottom: 1px solid #e6ece2;
+    gap: 20px;
 }
 
 .label {
     font-size: 12px;
+    color: #777;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #777;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .order-top h3,
 .order-top h4 {
     margin: 0;
-    font-size: 22px;
+    font-size: 24px;
     color: #2F3E2F;
 }
 
 .paid-badge {
     background: #2E7D32;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 22px;
     border-radius: 30px;
-    font-size: 15px;
     font-weight: 600;
+    font-size: 15px;
 }
 
 /* ---------- Books ---------- */
@@ -72,32 +72,33 @@
 }
 
 .book-card {
-    display: flex;
+    display: grid;
+    grid-template-columns: 170px 1fr 160px;
     align-items: center;
     gap: 30px;
+    width: 100%;
+    padding: 25px;
+    margin-bottom: 20px;
     background: #fafafa;
     border: 1px solid #ececec;
     border-radius: 15px;
-    padding: 25px;
-    margin-bottom: 20px;
 }
 
 .book-image {
-    width: 140px;
-    height: 200px;
+    width: 150px;
+    height: 210px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 5px 12px rgba(0,0,0,.12);
-    flex-shrink: 0;
+    box-shadow: 0 6px 15px rgba(0,0,0,.15);
 }
 
 .book-details {
-    flex: 1;
+    width: 100%;
 }
 
 .book-details h2 {
     margin-bottom: 15px;
-    font-size: 28px;
+    font-size: 30px;
     color: #2F3E2F;
 }
 
@@ -108,10 +109,18 @@
     line-height: 1.6;
 }
 
-.book-details h3 {
-    margin-top: 18px;
-    font-size: 28px;
+.book-details strong {
+    color: #333;
+}
+
+.book-price {
+    text-align: right;
+}
+
+.book-price h3 {
+    font-size: 34px;
     color: #2E7D32;
+    margin: 0;
 }
 
 /* ---------- Footer ---------- */
@@ -126,7 +135,8 @@
 }
 
 .order-footer h2 {
-    font-size: 28px;
+    margin: 0;
+    font-size: 32px;
     color: #2E7D32;
 }
 
@@ -151,6 +161,7 @@
 .empty-orders p {
     color: #666;
     font-size: 18px;
+    line-height: 1.6;
 }
 
 .shop-btn {
@@ -158,7 +169,7 @@
     margin-top: 25px;
     padding: 14px 30px;
     background: #5F8D4E;
-    color: white;
+    color: #fff;
     text-decoration: none;
     border-radius: 10px;
     font-weight: 600;
@@ -171,33 +182,30 @@
 
 /* ---------- Tablet ---------- */
 
-@media (max-width: 992px) {
-
-    .orders-container {
-        padding: 15px;
-    }
+@media (max-width: 900px) {
 
     .order-top {
         flex-wrap: wrap;
-        gap: 20px;
     }
 
     .book-card {
-        gap: 20px;
+        grid-template-columns: 150px 1fr;
     }
 
-    .book-details h2 {
-        font-size: 24px;
+    .book-price {
+        grid-column: 1 / -1;
+        text-align: left;
+        margin-top: 20px;
     }
 
-    .book-details h3 {
-        font-size: 24px;
+    .book-price h3 {
+        font-size: 28px;
     }
 }
 
 /* ---------- Mobile ---------- */
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
 
     .orders-container h1 {
         font-size: 30px;
@@ -208,52 +216,48 @@
         align-items: flex-start;
     }
 
-    .paid-badge {
-        align-self: flex-start;
-    }
-
     .book-card {
+        display: flex;
         flex-direction: column;
         text-align: center;
     }
 
     .book-image {
-        width: 170px;
-        height: 240px;
-    }
-
-    .book-details {
-        width: 100%;
+        width: 180px;
+        height: 250px;
     }
 
     .book-details h2 {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     .book-details p {
         font-size: 15px;
     }
 
-    .book-details h3 {
-        font-size: 24px;
+    .book-price {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .book-price h3 {
+        font-size: 30px;
     }
 
     .order-footer {
         justify-content: center;
-        text-align: center;
     }
 
     .order-footer h2 {
-        font-size: 22px;
+        font-size: 24px;
     }
 }
 
 /* ---------- Small Mobile ---------- */
 
-@media (max-width: 480px) {
+@media (max-width:480px) {
 
     .orders-container {
-        margin: 30px auto;
         padding: 10px;
     }
 
@@ -265,37 +269,17 @@
         padding: 15px;
     }
 
-    .book-card {
-        padding: 18px;
-    }
-
     .book-image {
-        width: 140px;
-        height: 200px;
+        width: 150px;
+        height: 210px;
     }
 
     .book-details h2 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
-    .book-details p {
-        font-size: 14px;
-    }
-
-    .book-details h3 {
-        font-size: 20px;
-    }
-
-    .order-footer h2 {
-        font-size: 20px;
-    }
-
-    .empty-orders img {
-        width: 160px;
-    }
-
-    .empty-orders p {
-        font-size: 15px;
+    .book-price h3 {
+        font-size: 26px;
     }
 
     .shop-btn {
